@@ -4,50 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>temprature</title>
-    <style>
-      body{
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: whitesmoke;
-      }
-      h1{
-        color:lightblue;
-      }
-      form{
-        background-color: white;
-        text-align: center;
-        max-width: 350px;
-        margin: auto;
-        padding: 10px;
-        box-shadow: 5px 5px 15px rgba(47, 47, 47, 0.827);
-      }
-      #textbox{
-        width:50%;
-        text-align:center;
-        font-size:2em;
-        border-radius:4px;
-        margin-bottom:15px;
-      }
-     label{
-       font-size:1.5em;
-       margin-bottom: 10px;
-       font-weight: bold;
-     }
-      button{
-        background-color: red;
-        padding: 10px 15px;
-        font-weight: bold;
-        border: none;
-        border-radius: 4px;
-        color: white;
-      }
-      #reslt{
-        font-weight: bold;
-        text-align:center;
-        font-size:2em;
-        border-radius:4px;
-        margin-top:15px
-      }
-    </style>
+<link rel="stylesheet" href="style\temprature.css">
   </head>
   
   <body>
@@ -63,28 +20,5 @@
         
    </form>
   </body>
-  <script>
-  const textbox = document.getElementById("textbox");
-  const tocelisius = document.getElementById("tocelisius");
-  const tofaranhit = document.getElementById("tofaranhit");
-  const result = document.getElementById("reslt");
-  
-  let temp;
-  function convert(){
-    
-    
-    if(tofaranhit.checked){
-      temp =Number(textbox.value );
-      temp= temp * 9/5 + 32 ;
-      result.innerHTML = temp.toFixed(1) +'&#8457;';
-    }else if(tocelisius.checked){
-      temp =Number(textbox.value );
-      temp= (temp - 32) * 5/9;
-      result.textContent = temp.toFixed(1) +'℃';
-    }else{
-      result.textContent= "select unit";
-    }
-  }
-  
-  </script>
+<script src="script/temprature.js"></script>
 </html>
