@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button onclick="" class="js-button">Click</button> 
+
+<script>
+const buttonEl = document.querySelector('.js-button');
+
+const eventListener = () => {
+    console.log('hello');
+};
+
+buttonEl.addEventListener('click', eventListener);
+
+buttonEl.removeEventListener('click', eventListener);
+
+buttonEl.addEventListener('click', () => {
+    console.log('hello2');
+});
+    /*  [
+  'make dinner',
+  'wash dish',
+  'watch youtube'].forEach((value, index) =>{
+      if(value === 'wash dish'){
+          return;
+      }
+      console.log(index);
+      console.log(value);
+  });
+  const regfunction= function(param){
+      console.log('hellor');
+      return 5;
+  }
+  regfunction(param);
+  const arrowFunction = (param, param2) =>{
+      console.log('helloA'); 
+      return 5;                       
+  };
+  arrowFunction(param);
+  */
+ console.log([1,-3,5].filter((value, index)=>{
+   /* if(value<= 0){
+        return true;
+    }else{
+    return false;
+ }*/
+}));
+ console.log([1,1,3].map((value ,  index)=>{
+    return 10;
+ }))
+ console.log([1,1,3].map((value ,  index)=>{
+    return value*2;
+ }))
+  </script>
+  
+</body>
+</html>

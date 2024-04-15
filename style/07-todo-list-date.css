@@ -1,0 +1,52 @@
+body{
+font-family: Arial, Helvetica, sans-serif;
+}
+.js-input-grid, .todo-grid{
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    margin-left: 10px;
+    column-gap: 10px;
+    row-gap: 10px;
+    font-weight: bold;
+    align-items:center;
+    
+}
+.js-input-grid{
+    margin-bottom: 10px;
+    align-items: stretch;
+   
+
+}
+.input-name,
+.name{
+
+    font-size: 15px;
+    padding: 6px;
+
+}
+.todo-grid:nth-child(){
+    background-color: aquamarine;
+    width: fit-content;
+}
+
+
+.adbtn{
+    background-color: green;
+    color: white;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.js-del{
+    background-color: darkred;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 6px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}

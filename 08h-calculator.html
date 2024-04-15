@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="input"></div>
+    <p>
+        <button onclick="
+            
+          disp('1')
+            ">1</button>
+        <button 
+        onclick="
+        
+        disp('2');
+        " >2</button>
+        <button  onclick="
+        
+           disp('3');
+            ">3</button>
+        <button onclick="
+            
+           disp('+');
+            ">+</button>
+    </p>
+    <p>
+        <button 
+        onclick="
+    
+           disp('4');
+            ">4</button>
+        <button 
+        onclick="
+            
+           disp('5');
+            ">5</button>
+        <button 
+        onclick="
+            
+           disp('6');
+            ">6</button>
+        <button 
+        onclick="
+        
+           disp('-');
+            ">-</button>
+    </p>
+    <p>
+        <button class="input"
+        onclick="
+            
+           disp('7');
+            ">7</button>
+        <button 
+        onclick="
+            
+           disp('8');
+            ">8</button>
+        <button 
+        onclick="
+            
+           disp('9');
+            ">9</button>
+        <button 
+        onclick="
+            
+           disp('*');
+            ">*</button>
+    </p>
+    <p>
+        <button 
+        onclick="
+            
+           disp('0');
+            ">0</button>
+        <button 
+        onclick="
+    
+           disp('.');
+            ">.</button>
+        <button
+        onclick="
+         
+            calc= eval(calc);
+            let inptEl=document.querySelector('.input');
+            inptEl.innerHTML=calc;
+            ">=</button>
+        <button 
+        onclick="
+            
+           disp('/');
+            ">/</button>
+    </p>
+    <button class="input" onclick=" 
+    
+   calc='';
+   let inptEl=document.querySelector('.input');
+            inptEl.innerHTML=calc;
+    ">Clear</button>
+    <script>
+
+  let calc=localStorage.getItem('result') || '';
+
+function disp(opr){
+calc +=  opr;
+let inptEl=document.querySelector('.input');
+ inptEl.innerHTML = calc;
+ localStorage.setItem('result',calc);  
+
+}
+function saveCalc(){
+    localStorage.setItem('result',calc);  }
+</script>
+</body>
+</html>

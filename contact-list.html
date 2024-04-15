@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>contact</title>
+  <style>
+*{
+  background-color: rgb(222, 217, 217);
+}
+
+  .grid, .ingrid{
+    display: grid;
+  grid-template-columns: 150px 150px 70px 70px;
+    align-items: center;
+    grid-gap: 10px;
+    margin-top: 10px;
+    
+  }
+    .inputC, .inputN {
+      width:120px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      border-color: black;
+    
+    }
+    .dele{
+      background-color: red;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      align-items: stretch;
+      border-radius: 3px;
+      box-shadow: 5px 5px 5px rgb(0, 0, 0.005);
+    }
+   .add, .rest{
+     
+      font-size: 20px;
+      font-weight:bold;
+      padding:5px;
+      color: white;
+      
+      background-color: green;
+       border-radius: 3px;
+      box-shadow: 5px 5px 5px rgb(0, 0, 0.005);
+    }
+    .grid{
+    width:300px;
+    padding: 5px;
+    font-weight: bold;
+    align-items: stretch;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0.005);
+    }
+  
+  </style>
+</head>
+
+<body>
+<h1>Contacts</h1>
+<div class="grid">
+<input class="inputC" placeholder="Name">
+<input class="inputN" type="number" placeholder="Number" >
+<button class="add" onclick="
+
+check();
+
+">+</button>
+<button class="rest" onclick="
+localStorage.clear();
+
+
+document.querySelector('.write-contact').innerText='';
+">Reset</button>
+<div class="write-contact"></div>
+
+</div>
+<script>
+// Array to store todo items
+  let contacts = JSON.parse(localStorage.getItem('contact')) || [{}];
+  
+  function displayContacts() {
+    
+    let listHtml='';
+    
+    for(let i = 1; i< contacts.length; i++){
+      
+    let conObj = contacts[i];
+    const { contact ,number} = conObj;
+      
+      let html = `<div class="ingrid"><div>
+        ${contact}
+      </div> <div>
+        ${number}
+      </div> <button class="dele" onClick="
+      contacts.splice(${i}, 1);
+      displayContacts();
+      ">delete</button></div>`
+      listHtml += html;
+    }
+    document.querySelector('.write-contact')
+    .innerHTML = listHtml;
+   
+  }
+  let inputCont;
+  let inputN;
+  // Function to add a new todo item
+  function addContact() {
+    
+   inputCont = document.querySelector('.inputC');
+   let contact = inputCont.value;
+    
+    inputN = document.querySelector('.inputN');
+   let number = inputN.value;
+    
+    contacts.unshift({contact, number});
+    localStorage.setItem('contact',JSON.stringify(contacts));
+    inputCont.value='';
+    inputN.value='';
+    
+  }
+  
+
+  function check(){
+  //  if(document.querySelector('.inputN')
+  //  .value){
+    //  alert('Please enter contacts')}else {
+        
+        addContact();
+        displayContacts();
+    //  }
+    }
+  
+  // Function to display all todo items
+  
+  
+  // Example usage
+  
+</script>
+</body>
+
+</html>

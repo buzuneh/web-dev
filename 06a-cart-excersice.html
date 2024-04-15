@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <button onclick="console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+  <button onclick="
+
+  updateCartQuantity(1);
+  ">Add to Cart</button>
+
+  <button onclick="
+   
+    updateCartQuantity(2);
+   
+  ">+2</button>
+
+  <button onclick="
+    updateCartQuantity(3);
+    
+  ">+3</button>
+
+  <button onclick="
+   
+    updateCartQuantity(4);
+   
+  ">+4</button>
+
+  <button onclick="
+   updateCartQuantity(5);
+  ">+5</button>
+
+  <!-- vvv This code was changed. vvv -->
+  <button onclick="
+  updateCartQuantity(-1);
+  
+    ">Remove from cart</button>
+
+  <button onclick="
+    updateCartQuantity(-2);
+
+  ">-2</button>
+
+  <button onclick="
+    updateCartQuantity(-3);
+  ">-3</button>
+  <!-- ^^^ This code was changed. ^^^ -->
+
+  <button onclick="
+    cartQuantity = 0;
+    console.log('Cart was reseted.');
+    console.log(`Cart quantity: ${cartQuantity}`);
+  ">Reset Cart</button>
+
+  <script>
+    let  cartQuantity= 0;
+   
+    let unit;
+    function updateCartQuantity(unit){
+      if(cartQuantity + unit > 10){
+        alert('the cart is full');
+        return;
+      }
+      if(cartQuantity + unit < 0){
+        alert('No enough items in the cart');
+        return;
+      }
+      cartQuantity += unit;
+      console.log(`Cart quantity: ${cartQuantity}`);
+    }
+
+    // greateng for hour
+   /* let greating;
+    let name="Buzuneh"
+     let hour = new Date().getHours();
+    if(hour>=6 && hour <= 12){
+     greating= "Good morning!" + name;
+    }else if(hour >= 13 && hour<17){
+        greating = "Good afternoon"+ name;
+    }else if(hour>= 17 && hour<24){
+       greating = "Good night"+ name;
+    }
+    console.log(hour);
+    console.log(gsreating);*/
+//Test for discount
+    /*let age = prompt("Enter your age");
+    if(age <= 6 || age>= 65){
+        alert("Discount");
+    }else{
+        alert("No discount");
+    }*/
+   /* let age = 40;
+    let isHoliday = false;
+       
+  
+    if((!isHoliday) && (age <= 6 || age>= 65)){
+        alert("Discount");
+    }else if((isHoliday) && (age <= 6 || age>=65)){
+        alert("the discount 50%");
+    }else{
+        alert("No discount")
+    }*/
+  </script>
+</body>
+</html>

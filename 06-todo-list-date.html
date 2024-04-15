@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+<link rel="stylesheet" href="style/06-todo-list-date.css">
+</head>
+<body>
+    <p class="title">Todo List</p>
+    <div class="js-input-grid">
+    <input placeholder="Todo name" class="js-name-input input-name">
+    <input type="date" class="js-duedate">
+    <button onclick="
+    const inputEl = document.querySelector('.js-name-input');
+     const name= inputEl.value;
+    if(name){
+    addTodo();
+    }else{
+        renderTodol();
+        document.querySelector('.js-todo-list')
+    .innerHTML='Please Enter todo name...'; 
+   
+    }
+    " class="adbtn">Add</button>
+    </div>
+    <div class="js-todo-list todo-grid"></div>
+</div>
+    <script src="script/06-todo-list-date.js"></script>
+</body>
+</html>

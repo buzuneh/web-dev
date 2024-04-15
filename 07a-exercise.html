@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waether</title>
+    <style>
+        body{
+            background-color: rgb(18, 18, 18);
+        }
+        button{
+            width: 60px;
+            height: 60px;
+            background-color: rgba(31, 31, 31, 0.859);
+            border: none;
+            margin: 2.5px 2.5px;
+            color: white;
+            font-weight: bold;
+            font-size: large;
+            box-shadow: 5px 5px  hsla(0, 0%, 0%, 0.609);
+        }
+            div{
+                width: 270px;
+                height: 60px;
+                background-color: rgba(151, 149, 149, 0.873);
+            }
+        
+    </style>
+</head>
+
+<body>
+    <div class="input"></div>
+    <p>
+        <button onclick="
+            
+          disp('1')
+            ">1</button>
+        <button 
+        onclick="
+        
+        disp('2');
+        " >2</button>
+        <button  onclick="
+        
+           disp('3');
+            ">3</button>
+        <button onclick="
+            
+           disp('+');
+            ">+</button>
+    </p>
+    <p>
+        <button 
+        onclick="
+    
+           disp('4');
+            ">4</button>
+        <button 
+        onclick="
+            
+           disp('5');
+            ">5</button>
+        <button 
+        onclick="
+            
+           disp('6');
+            ">6</button>
+        <button 
+        onclick="
+        
+           disp('-');
+            ">-</button>
+    </p>
+    <p>
+        <button class="input"
+        onclick="
+            
+           disp('7');
+            ">7</button>
+        <button 
+        onclick="
+            
+           disp('8');
+            ">8</button>
+        <button 
+        onclick="
+            
+           disp('9');
+            ">9</button>
+        <button 
+        onclick="
+            
+           disp('*');
+            ">*</button>
+    </p>
+    <p>
+        <button 
+        onclick="
+            
+           disp('0');
+            ">0</button>
+        <button 
+        onclick="
+    
+           disp('.');
+            ">.</button>
+        <button
+        onclick="
+         
+            calc= eval(calc);
+            let inptEl=document.querySelector('.input');
+            inptEl.innerHTML=calc;
+            ">=</button>
+        <button 
+        onclick="
+            
+           disp('/');
+            ">/</button>
+    </p>
+    <button class="input" onclick=" 
+    
+   calc='';
+   let inptEl=document.querySelector('.input');
+            inptEl.innerHTML=calc;
+    ">Clear</button>
+    <script>
+
+  let calc='';
+
+function disp(opr){
+calc +=  opr;
+    let inptEl=document.querySelector('.input');
+            inptEl.innerHTML=calc;
+}
+     /*   let cell = '';
+function convertToFahrenheit(cell){
+let fahrahreit = (cell * 9/5) + 32;
+console.log(fahrahreit);
+    return fahrahreit;
+    
+  }
+  
+     convertToFahrenheit(prompt(cell));  
+     */
+    /* let F = '';
+function convertToCelsius(F){
+let Celsius = (F - 32) * 5/9;
+console.log(Celsius);
+    return Celsius;
+    
+}
+     convertToCelsius(prompt(F));  */
+    /*  let degree = '';
+function convertToTemprature(degree, C=' C'){
+let Celsius = (degree - 32) * 5/9;
+console.log(Celsius + C);
+    return toString(Celsius + C);
+    
+}
+     convertToTemprature(prompt(degree)); 
+*/
+/*
+let greet=(name)=>{
+   
+    if(!name){
+        console.log("Hi there");
+    }else{
+        console.log(`hello ${name}`);
+    }
+
+}
+greet();*/
+
+    </script>
+</body>
+</html>
