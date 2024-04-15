@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coine flip game</title>
+    <style>
+
+          body{
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: rgba(44, 43, 43, 0.852);
+                }
+    .container{
+                    height: 450px;
+                    background-color: rgba(40, 39, 39, 0.676);
+                    max-width: 400px;
+                    margin: auto;
+                    text-align: center;
+                    box-shadow: 5px 5px 10px hsla(0, 0%, 15%, 0.383);
+                }
+            h1{
+                    padding-top: 50px ;
+                    font-size: 45px;
+                    color: rgba(250, 235, 215, 0.824);
+                }
+             p{
+                    font-size: 40px;
+                    font-weight: bold;
+                }
+        button{  
+                    width: 65px;
+                    background-color: rgb(255, 89, 0);
+                    margin: 10px;
+                    padding-left: 12px;
+                    padding-right: 12px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    border: none;
+                    font-size: large;
+                    font-weight: bold;
+                    border-radius: 3px;
+                    text-align: center;
+                    box-shadow: 5px 5px 10px hsla(0, 0%, 5%, 0.789);
+                    cursor: pointer;
+                }
+          .img{
+                    width: 100px;
+                    border-radius: 50%;
+                    box-shadow: 8px 10px 10px hsla(0, 0%, 5%, 0.789);
+                }
+            
+    </style>
+</head>
+<body>
+
+            <div class="container">
+                <h1>Haid or Tail</h1>
+                <p class="score"></p>
+                <button class="head" onclick="
+                flipCoin();
+                ">Head</button>
+                <button class="tail" onclick="
+                flipCoin();
+                ">Tail</button>    
+            </div>
+        
+        <script>
+                const headEl = document.querySelector('.head');
+                function flipCoin(){
+                    let randemNumber= Math.random();
+                if(randemNumber >= 0 && randemNumber < 0.5){
+
+                document.querySelector('.score').innerHTML= `<img class="img"  src="picture/head-image.jpg">`;
+                }else if(randemNumber >= 0.5 && randemNumber < 1){
+                    
+                    document.querySelector('.score').innerHTML= `<img class="img"  src="picture/tail-image.jpg">`;
+            }  
+        }
+        
+       </script>
+ </html>
