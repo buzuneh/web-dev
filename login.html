@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+   <style>
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(126, 189, 238, 0.336);
+    }
+    form{
+   
+        max-width: 400px;
+        margin: auto;
+        background-color: lightblue;
+        text-align: center;
+        margin-top: 10%;
+        padding: 5%;
+        border-radius: 7px;
+        box-shadow: 5px 5px 10px hsla(0, 0%, 0%, 0.344);
+    }
+  
+    input{
+        width: 200px;
+        height: 22px;
+        font-size: medium;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+       border-color: black;
+        background-color: lightblue;
+        margin-bottom: 20px;
+    }
+    label{
+        font-size: medium;
+    }
+  #username:focus, #password:focus{
+    background-color: rgba(154, 195, 209, 0.315);
+        border-top: red;
+        border-right: none;
+        border-left: none;
+     outline: none;
+    }
+    .login{
+width: 70px;
+background-color: rgb(58, 180, 221);
+padding: 8px 15px;
+font-weight: bolder;
+border-width: 0px;
+border-radius: 5px;
+box-shadow: inset;
+cursor: pointer;
+margin-top: 20px;
+    }
+   </style>
+</head>
+<body>
+    <form id="loginForm">
+  
+        <h1>Login</h1>
+     
+            <label for="username"></label>
+            <input type="username" placeholder="Enter username" id="username">
+        
+       
+        <label for="password"></label>
+        <input type="password" name="password" id="password" placeholder="Enter password"><br>
+       
+      <button type="submit" class="login" onclick="
+      login();
+      " >Login</button>
+      <div id="msg"></div>
+    </form>
+ 
+  
+</body>
+<script>
+function login(){
+    document.getElementById("loginForm").onsubmit=event.preventDefault();
+    
+    let userName = document.getElementById("username").value;
+    let passWord = document.getElementById('password').value;
+   
+    let user ='roben';
+    let pass = '1233';
+
+
+
+if(userName === user && passWord === pass){
+document.getElementById('msg').innerHTML =  `<a href="/coin-flip.html">Play</a>`;
+document.getElementById('msg').style.color='green', font='bold'; 
+}else{
+    let msg = document.getElementById('msg');
+   msg.innerHTML = "Unknown User";
+   document.getElementById('msg').style.color='red';
+}
+
+    
+}
+</script>
+</html>
