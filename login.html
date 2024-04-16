@@ -59,25 +59,20 @@ margin-top: 20px;
     <form id="loginForm">
   
         <h1>Login</h1>
-     
-            <label for="username"></label>
-            <input type="username" placeholder="Enter username" id="username">
-        
-       
+        <label for="username"></label>
+        <input type="username" placeholder="Enter username" id="username">
         <label for="password"></label>
         <input type="password" name="password" id="password" placeholder="Enter password"><br>
-       
-      <button type="submit" class="login" onclick="
-      login();
-      " >Login</button>
-      <div id="msg"></div>
+        <button type="submit" class="login" onclick="login(); ">Login</button>
+        <div id="msg"></div>
+
     </form>
- 
-  
 </body>
+
 <script>
 function login(){
-    document.getElementById("loginForm").onsubmit=event.preventDefault();
+
+        document.getElementById("loginForm").onsubmit=event.preventDefault();
     
     let userName = document.getElementById("username").value;
     let passWord = document.getElementById('password').value;
@@ -85,18 +80,17 @@ function login(){
     let user ='roben';
     let pass = '1233';
 
-
-
 if(userName === user && passWord === pass){
-document.getElementById('msg').innerHTML =  `<a href="/coin-flip.html">Play</a>`;
-document.getElementById('msg').style.color='green', font='bold'; 
-}else{
-    let msg = document.getElementById('msg');
-   msg.innerHTML = "Unknown User";
-   document.getElementById('msg').style.color='red';
-}
 
-    
+        document.getElementById('msg').innerHTML =  `<a href="/coin-flip.html">Play</a>`;
+        document.getElementById('msg').style.color='green', font='bold'; 
+
+}else{
+
+    let msg = document.getElementById('msg');
+        msg.innerHTML = "Unknown User";
+        document.getElementById('msg').style.color='red';
+}   
 }
 </script>
 </html>
