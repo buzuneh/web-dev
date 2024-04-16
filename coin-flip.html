@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coine flip game</title>
     <style>
-
           body{
                     font-family: Arial, Helvetica, sans-serif;
                     background-color: rgba(44, 43, 43, 0.852);
@@ -54,11 +53,9 @@
                     font-weight: bold;
                     color: white;
                 }
-            
     </style>
 </head>
 <body>
-
             <div class="container">
                 <h1>Head or Tail</h1>
                 <p class="score"></p>
@@ -66,58 +63,43 @@
                 flipCoin('head');
                 ">Head</button>
                 <button class="tail" onclick="
-                flipCoin('tail');
+              flipCoin('tail');
                 ">Tail</button>    
                 <div class="blc">Balance:</div>
             </div>
-        
         <script>
-            let result='';
-            function flipCoin(playMove){
-
-                if(playMove === 'head'){
-                    if(compMove === 'head'){
+      let result='';
+        function flipCoin(playMove){
+         const   compMove = compPick();
+             if(playMove === 'head'){
+                if(compMove === 'head'){
                         result = 'Win';
-                document.querySelector('.score').innerHTML= `<img class="img"  src="picture/head-image.jpg">`;
-                document.querySelector('.blc').innerHTML=result + balance;
-              
-            }else if(compMove === 'tail'){
-                result = 'Lose';
-                document.querySelector('.score').innerHTML= `<img class="img"  src="picture/tail-image.jpg">`;
-                document.querySelector('.blc').innerHTML=result + Number(balance - draw);   
-                }
-            }else if(playMove === 'tail'){
-                    if(compMove === 'tail'){
-                        result='Win';
-                  document.querySelector('.score').innerHTML= `<img class="img"  src="picture/tail-image.jpg">`;
-                    document.querySelector('.score').innerHTML= result + balance ;
-                    }else if(compMove === 'head'){
-                        result = 'Lose';
-                        document.querySelector('.score').innerHTML= `<img class="img"  src="picture/head-image.jpg">`;
-                        document.querySelector('.blc').innerHTML= result + Number(balance - draw);   
-                    }
-                }
+                }else if(compMove === 'tail'){
+                result  = 'Lose';
             }
-               
-                    let draw=10;
-                    let win=0;
-                    let lose=0;
-                    let compMove='';
-                    let balance=0;
+            }else if(playMove === 'tail'){
+                 if(compMove === 'tail'){
+                        result='Win';   
+                 }else if(compMove === 'head'){
+                        result = 'Lose';      
+                 }
+            }
+               if(result === 'Win'){
+                document.querySelector('.score').innerHTML= `<img class="img"  src="picture/${compMove}-image.jpg">`;
+                document.querySelector('.blc').innerHTML=result;
+               } else if(result === 'Lose'){
+              document.querySelector('.score').innerHTML= `<img class="img"  src="picture/${compMove}-image.jpg">`;
+                document.querySelector('.blc').innerHTML= result;
+            }
+            }
                 function compPick(){
-                    let randemNumber= Math.random();
-                     win= 10 + (10 * randemNumber);
-                     balance = Number(balance + win)- draw;
-                     ompMove=compPick();
-                if(randemNumber >= 0 && randemNumber < 0.5){
-                     compMove = 'haed';
-                }else if(randemNumber >= 0.5 && randemNumber < 1){
+              const randemNumber= Math.random();           
+                  if( randemNumber < 0.5){
+                     compMove = 'head';
+                }else{
                    compMove = 'tail';
-                 
-            }  
+            } 
             return compMove;
         }
-
-        
        </script>
  </html>
