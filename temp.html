@@ -6,23 +6,35 @@
     <title>Document</title>
 </head>
 <body>
+  <input type="text" placeholder="Name" class="input">
+  <button onclick="
+  addTodo();
+  ">Add</button>
+  <div class="contained"></div>
     <script>
-        const randomNumber = Math.random();
-        let result;
-  
-        if (randomNumber < 0.5) {
-          result = 'heads';
-        } else {
-          result = 'tails';
-        }
-  
-        const guess = 'heads';
-  
-        if (guess === result) {
-          console.log('You win!');
-        } else {
-          console.log('You lose!');
-        }
+      let todoList = ['buze', 'zufan', 'kety'];
+      rend();
+      function rend(){
+      let listed= '';
+      for(let i = 0; i<todoList.length; i++){
+        let list = todoList[i];
+        let html = `<p>${list}</p>`;
+        listed += html;
+       
+      }
+      document.querySelector('.contained').innerHTML=listed;
+    }
+      
+
+      function addTodo(){
+       let inpEle = document.querySelector('.input');
+       let inputVal= inpEle.value;
+       todoList.push(inputVal);
+       inpEle.value='';
+      
+   
+      rend();
+      }
       </script> 
 </body>
 </html>
